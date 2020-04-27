@@ -8,12 +8,22 @@ package gorootcheck
 
 import (
 	"bufio"
+	"syscall"
 	"os"
 )
 
 // p path f file
 func fileExist(p string, f string) bool {
 	if _, err := os.Stat(p + "/" + f); os.IsNotExist(err) || os.IsPermission(err) {
+		return false
+	}
+	return true
+}
+
+func fileStats(p string, f string) bool {
+	var stat syscall.Stat_t
+	err := syscall.Stat(p + "/" + f, &stat)
+	if err != nil{
 		return false
 	}
 	return true

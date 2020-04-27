@@ -15,27 +15,28 @@ import (
 	"fmt"
 )
 
-func rkfilesNative(m map[string]string) error{
-	//fmt.Println("- Native Golang") // maybe not
-	for f, n := range m {
-		fmt.Println("> ", f)
-		if fileExist("/",f) {
-			fmt.Println("Rootkit Found: ", n, " in ", f)
-		}
+func rkExist(f string) bool {
+	// NATIVE GOLANG
+	if fileExist("/",f) {
+		return true
+	}
+	// Syscall Stat
+	if fileStats("/",f){
+		return true
 	}
 
-	return nil 
+	return false
 }
 
 func rootkit_files() bool {
 	fmt.Println("#1 - Searching for malicius files -> rootkit_files.txt")
 	maprk := dbRkfile()
 
-	// Native Golang
-	err := rkfilesNative(maprk)
-	if err != nil {
-		fmt.Printf("#1 Native Golang Error")
+	for f, n := range maprk {
+		if rkExist(f) {
+			fmt.Println(" - Malicius file: ",n," in ", f)
+		}	
 	}
-
+	
 	return true
 }
