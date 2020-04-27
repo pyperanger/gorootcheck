@@ -17,11 +17,11 @@ import (
 
 func rkExist(f string) bool {
 	// NATIVE GOLANG
-	if fileExist("/",f) {
+	if fileExist("/", f) {
 		return true
 	}
 	// Syscall Stat
-	if fileStats("/",f){
+	if fileStats("/", f) {
 		return true
 	}
 
@@ -34,9 +34,9 @@ func rootkit_files() bool {
 
 	for f, n := range maprk {
 		if rkExist(f) {
-			fmt.Println(" - Malicius file: ",n," in ", f)
-		}	
+			fmt.Println(" - Malicius file: ", n, " in ", f)
+		}
 	}
-	
+
 	return true
 }

@@ -8,10 +8,11 @@ package gorootcheck
 
 import (
 	"bufio"
-	"syscall"
 	"os"
+	"syscall"
 )
 
+// Native golang check
 // p path f file
 func fileExist(p string, f string) bool {
 	if _, err := os.Stat(p + "/" + f); os.IsNotExist(err) || os.IsPermission(err) {
@@ -20,10 +21,11 @@ func fileExist(p string, f string) bool {
 	return true
 }
 
+// syscall_stat
 func fileStats(p string, f string) bool {
 	var stat syscall.Stat_t
-	err := syscall.Stat(p + "/" + f, &stat)
-	if err != nil{
+	err := syscall.Stat(p+"/"+f, &stat)
+	if err != nil {
 		return false
 	}
 	return true
