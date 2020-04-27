@@ -1,7 +1,6 @@
 package gorootcheck
 
 /*
-
 OSSEC Rootcheck features
 
 #1    Read the rootkit_files.txt which contains a database of rootkits and files commonly used by them. It will try to stats, fopen and opendir each specified file. We use all these system calls because some kernel-level rootkits hide files from some system calls. The more system calls we try, the better the detection. This method is more like an anti-virus rule that needs to be updated constantly. The chances of false-positives are small, but false negatives can be produced by modifying the rootkits.
@@ -11,12 +10,11 @@ OSSEC Rootcheck features
 #5    Look for the presence of hidden processes. We use getsid() and kill() to check if any pid is being used or not. If the pid is being used, but “ps” can’t see it, it is the indication of kernel-level rootkit or a trojaned version of “ps”. We also verify that the output of kill and getsid are the same.
 #6    Look for the presence of hidden ports. We use bind() to check every tcp and udp port on the system. If we can’t bind to the port (it’s being used), but netstat does not show it, we probably have a rootkit installed
 #7    Scan all interfaces on the system and look for the ones with “promisc” mode enabled. If the interface is in promiscuous mode, the output of “ifconfig” should show that. If not, we probably have a rootkit installed.
-
 */
 
 // Main struture of gorootcheck code
 // Make call for checks and arguments
-func Main() {	
-
-
+func Main() {
+	banner()
+	rootkit_files()
 }

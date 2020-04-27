@@ -8,13 +8,14 @@ import (
 var (
 	workdir = flag.String("w", "./", "Path with database datails and signatures")
 	version = flag.Bool("version", false, "Show version")
-	debug = flag.Bool("v", false, "Debug mode")
-	help = flag.Bool("h", false, "This massage")
+	debug   = flag.Bool("v", false, "Debug mode")
+	help    = flag.Bool("h", false, "This massage")
+	VERSION = "0.1.0"
 )
 
 func argsUsage() {
 	fmt.Println(`GoRootCheck - OSSEC Standalone RootCheck in GO
-v0.1.0 - github.com/pyperanger/gorootcheck
+v` + VERSION + ` - github.com/pyperanger/gorootcheck
 `)
 }
 
@@ -25,13 +26,8 @@ func Args() bool {
 		flag.Usage()
 		bye()
 	}
-
-	if !dirExist(*workdir) {
-		fmt.Println(*workdir, ": Not found")
+	if !dbCheck() {
 		return false
 	}
-
-	if !dbCheck(*workdir) 
-
 	return true
 }

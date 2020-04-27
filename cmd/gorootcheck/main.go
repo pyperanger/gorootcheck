@@ -5,8 +5,8 @@ import (
 )
 
 // Call the package gorootcheck Main
-func main(){
+func main() {
 	if gorootcheck.Args() {
-		gorootcheck.Main();	
+		gorootcheck.Main()
 	}
 }
