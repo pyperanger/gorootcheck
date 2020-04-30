@@ -1,7 +1,7 @@
 package gorootcheck
 
 import (
-	"fmt"
+	//"fmt"
 	"os"
 )
 
@@ -9,7 +9,7 @@ import (
 func dirExist(p string) bool {
 	f, err := os.Stat(p)
 	if err != nil {
-		fmt.Println(p, ": Not found")
+		//fmt.Println(p, ": Not found")
 		return false
 	}
 	if f.IsDir() {
