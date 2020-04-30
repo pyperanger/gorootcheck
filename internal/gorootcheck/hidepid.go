@@ -55,6 +55,7 @@ func psfind(pid int) bool {
 	ps := exec.Command("ps","--no-header","-p",strconv.Itoa(pid),"o","pid")
 	std, err := ps.Output()
 	if err != nil {
+		fmt.Println("Hidden PID: ", strconv.Itoa(pid))
 		return false
 	}
 	if string(std) == "" {
