@@ -29,7 +29,7 @@ func rkExist(f string) bool {
 }
 
 // Main rule #1 function
-func rootkit_files()  {
+func rootkit_files() {
 	fmt.Println("#1 - Searching for malicius files -> rootkit_files.txt")
 	maprk := dbRkfile()
 

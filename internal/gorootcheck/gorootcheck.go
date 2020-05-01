@@ -16,8 +16,9 @@ OSSEC Rootcheck features
 // Make call for checks and arguments
 func Main() {
 	banner()
-	// Rule #1 
+	// Rule #1
 	rootkit_files()
 	// Rule 5
 	hidden_pid()
+	// Rule 6
 }
