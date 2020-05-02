@@ -1,5 +1,9 @@
+This is a 'free time' project, for study propose only.
+
 # gorootcheck
 Standalone rootcheck by ossec wrtitten in Go
+
+2020-02-05 | v0.4.0 - Some false positives and bugs
 
 
 https://www.ossec.net/docs/manual/rootcheck/manual-rootcheck.html
@@ -15,6 +19,3 @@ https://www.ossec.net/docs/manual/rootcheck/manual-rootcheck.html
 ### Bonus features
 - [ ] MISP Integration
 - [ ] JSON HTTP/REST Report
-
-#### Documentation
-I'll generate documentation code with godoc and post in this repo. 
