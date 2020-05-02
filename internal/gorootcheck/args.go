@@ -10,7 +10,7 @@ var (
 	version = flag.Bool("version", false, "Show version")
 	debug   = flag.Bool("v", false, "Debug mode")
 	help    = flag.Bool("h", false, "This massage")
-	VERSION = "0.1.0"
+	VERSION = "0.4.0"
 )
 
 func argsUsage() {

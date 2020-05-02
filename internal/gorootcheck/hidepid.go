@@ -7,6 +7,8 @@ is being used, but “ps” can’t see it, it is the indication of
 kernel-level rootkit or a trojaned version of “ps”. We also
 verify that the output of kill and getsid are the same.
 ..
+
+* - Native Golang Check
 */
 package gorootcheck
 
@@ -14,8 +16,8 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"strconv"
 	"regexp"
+	"strconv"
 	"strings"
 	"syscall"
 )
@@ -23,7 +25,7 @@ import (
 // check if given pid/lwp is
 // a possible thread of gorootkit pid
 func islwp(grk int, pid int) bool {
-	status, err := fileReadline("/proc/"+ strconv.Itoa(pid) + "/status")
+	status, err := fileReadline("/proc/" + strconv.Itoa(pid) + "/status")
 	if err != nil {
 		return false
 	}
@@ -32,7 +34,7 @@ func islwp(grk int, pid int) bool {
 	if err != nil {
 		return false
 	}
-	if grk == tgid{
+	if grk == tgid {
 		return true
 	}
 	return false
@@ -67,7 +69,7 @@ func pidinfo(pid int) {
 	if err != nil {
 		return
 	}
-	fmt.Println("\tCMDLINE => ", cmd[0], "\n\tBinary => ", exe, "\n\tPWD => ", cwd )
+	fmt.Println("\tCMDLINE => ", cmd[0], "\n\tBinary => ", exe, "\n\tPWD => ", cwd)
 }
 
 // Kill -0 $PID
@@ -81,8 +83,8 @@ func syskillzero(pid int) bool {
 
 // Filter psfind returned value
 // and find given pid
-// return true if a pid it NOT founded 
-// in PS output 
+// return true if a pid it NOT founded
+// in PS output
 func psfindstd(out string, pid int) bool {
 	stdlite := strings.Split(out, "\n")
 	for _, v := range stdlite {
@@ -137,7 +139,7 @@ func psproc() {
 	for _, pid := range pids {
 		if dirExist("/proc/" + strconv.Itoa(pid)) {
 			if syskillzero(pid) {
-				fmt.Println("	- Hidden PID:", pid)
+				fmt.Println("\t- Hidden PID:", pid)
 				pidinfo(pid)
 			}
 		}

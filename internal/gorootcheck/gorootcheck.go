@@ -18,7 +18,8 @@ func Main() {
 	banner()
 	// Rule #1
 	rootkit_files()
-	// Rule 5
+	// Rule #5
 	hidden_pid()
-	// Rule 6
+	// Rule #6
+	hidden_port()
 }
