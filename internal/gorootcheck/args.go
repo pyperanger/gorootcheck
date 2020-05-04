@@ -2,6 +2,7 @@ package gorootcheck
 
 import (
 	"flag"
+	"os"
 	"fmt"
 )
 
@@ -10,7 +11,7 @@ var (
 	version = flag.Bool("version", false, "Show version")
 	debug   = flag.Bool("v", false, "Debug mode")
 	help    = flag.Bool("h", false, "This massage")
-	VERSION = "0.5.0"
+	VERSION = "0.6.0"
 )
 
 func argsUsage() {
@@ -21,6 +22,10 @@ v` + VERSION + ` - github.com/pyperanger/gorootcheck
 
 func Args() bool {
 	argsUsage()
+	if os.Getuid() != 0 {
+		fmt.Println("- Run gorootcheck as root")
+		bye()
+	}
 	flag.Parse()
 	if *help {
 		flag.Usage()

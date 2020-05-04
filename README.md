@@ -4,7 +4,10 @@ This is a **'free time'** project, for study propose only.
 [![https://travis-ci.com/github/pyperanger/gorootcheck](https://api.travis-ci.com/pyperanger/gorootcheck.svg?branch=master&status=passed)](https://travis-ci.com/github/pyperanger/gorootcheck)<br>
 Standalone rootcheck by **OSSEC** wrtitten in Go
 
-2020-04-05 | v0.5.0 - Some false positives(**rootkit_files.txt**) and bugs
+#### 2020-04-05 | v0.6.0 
+- Some false positives(**rootkit_files.txt**) and bugs persist
+- Improve performance in general
+
 
 ### Install 
 ```

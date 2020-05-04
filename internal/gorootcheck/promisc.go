@@ -9,7 +9,7 @@ we probably have a rootkit installed.
 file:
 	/sys/class/net/<iface>/flags
 
-ref: 
+ref:
 	https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-net
 	https://github.com/torvalds/linux/blob/master/include/uapi/linux/if.h
 */
@@ -17,10 +17,10 @@ package gorootcheck
 
 import (
 	"fmt"
-	"regexp"
-	"strconv"
 	"io/ioutil"
 	"os/exec"
+	"regexp"
+	"strconv"
 )
 
 // return all interfaces name
@@ -33,18 +33,18 @@ func listinterfaces() ([]string, error) {
 	for _, i := range ifacedirs {
 		iface = append(iface, i.Name())
 	}
-	return iface, nil 
+	return iface, nil
 }
 
 // return TRUE if given interface is in promisc mode
 // promisc mode bitmask 100
 func scaninterface(iface string) bool {
-	flags, err := ioutil.ReadFile("/sys/class/net/"+iface+"/flags")
+	flags, err := ioutil.ReadFile("/sys/class/net/" + iface + "/flags")
 	if err != nil {
 		fmt.Println(" - Error reading flags from interface: ", iface)
 		return false
 	}
-	bytemark := flags[2:len(flags)-1]
+	bytemark := flags[2 : len(flags)-1]
 	if len(bytemark) < 3 {
 		return false
 	}
@@ -52,13 +52,13 @@ func scaninterface(iface string) bool {
 	if err != nil {
 		return false
 	}
-	if bitmark / 100 == 11 || bitmark / 100 == 1 {
+	if bitmark/100 == 11 || bitmark/100 == 1 {
 		return true
 	}
 	return false
 }
 
-// return TRUE if interface is promisc mode 
+// return TRUE if interface is promisc mode
 // in ifconfig command
 func ifconfigface(iface string) bool {
 	cmd := exec.Command("ifconfig", iface)
