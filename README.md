@@ -24,7 +24,7 @@ https://www.ossec.net/docs/manual/rootcheck/manual-rootcheck.html
 - [X] Scan all interfaces on the system and look for the ones with “promisc” mode enabled. If the interface is in promiscuous mode, the output of “ifconfig” should show that. If not, we probably have a rootkit installed.
 
 ### Bonus features
-- [ ] MISP Integration
+- [ ] MISP/Cortex Integration
 - [ ] JSON HTTP/REST Report
 
 #### BUGS OR BYPASS(Coool)
