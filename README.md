@@ -1,10 +1,16 @@
-This is a 'free time' project, for study propose only.
+This is a **'free time'** project, for study propose only.
 
 # gorootcheck
 Standalone rootcheck by ossec wrtitten in Go
 
-2020-02-05 | v0.4.0 - Some false positives and bugs
+2020-04-05 | v0.5.0 - Some false positives(**rootkit_files.txt**) and bugs
 
+### Install 
+```
+git clone https://github.com/pyperanger/gorootcheck.git
+cd gorootcheck
+make
+```
 
 https://www.ossec.net/docs/manual/rootcheck/manual-rootcheck.html
 ### Rootcheck features  
@@ -13,9 +19,12 @@ https://www.ossec.net/docs/manual/rootcheck/manual-rootcheck.html
  - [ ] Scan the /dev directory looking for anomalies. The /dev should only have device files and the Makedev script. A lot of rootkits use the /dev to hide files. This technique can detect even non-public rootkits.
 - [ ] Scan the whole filesystem looking for unusual files and permission problems. Files owned by root, with write permission to others are very dangerous, and the rootkit detection will look for them. Suid files, hidden directories and files will also be inspected.
 - [X] Look for the presence of hidden processes. We use getsid() and kill() to check if any pid is being used or not. If the pid is being used, but “ps” can’t see it, it is the indication of kernel-level rootkit or a trojaned version of “ps”. We also verify that the output of kill and getsid are the same.
- - [X] [IPV4/IPV6] Look for the presence of hidden ports. We use bind() to check every tcp and udp port on the system. If we can’t bind to the port (it’s being used), but netstat does not show it, we probably have a rootkit installed
- - [ ] Scan all interfaces on the system and look for the ones with “promisc” mode enabled. If the interface is in promiscuous mode, the output of “ifconfig” should show that. If not, we probably have a rootkit installed.
+- [X] [IPV4/IPV6] Look for the presence of hidden ports. We use bind() to check every tcp and udp port on the system. If we can’t bind to the port (it’s being used), but netstat does not show it, we probably have a rootkit installed
+- [X] Scan all interfaces on the system and look for the ones with “promisc” mode enabled. If the interface is in promiscuous mode, the output of “ifconfig” should show that. If not, we probably have a rootkit installed.
 
 ### Bonus features
 - [ ] MISP Integration
 - [ ] JSON HTTP/REST Report
+
+#### BUGS OR BYPASS(Coool)
+Open a issue or contact me pype@0day.rocks via xmpp

@@ -22,4 +22,6 @@ func Main() {
 	hidden_pid()
 	// Rule #6
 	hidden_port()
+	// Rule #7
+	promisc()
 }

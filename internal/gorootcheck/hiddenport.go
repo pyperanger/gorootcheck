@@ -7,7 +7,7 @@ does not show it, we probably have a rootkit installed
 
 Check TCP/UDP ports 
 
-[ ] TCP
+[X] TCP
 [ ] UDP
 
 */
