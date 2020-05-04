@@ -1,6 +1,7 @@
 This is a **'free time'** project, for study propose only.
 
 # gorootcheck
+[![https://travis-ci.com/github/pyperanger/gorootcheck](https://api.travis-ci.com/pyperanger/gorootcheck.svg?branch=master&status=passed)](https://travis-ci.com/github/pyperanger/gorootcheck)
 Standalone rootcheck by ossec wrtitten in Go
 
 2020-04-05 | v0.5.0 - Some false positives(**rootkit_files.txt**) and bugs
