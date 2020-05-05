@@ -68,6 +68,7 @@ func ifconfigface(iface string) bool {
 	}
 	promisc, _ := regexp.Compile("PROMISC")
 	if promisc.MatchString(string(stdconfig)) {
+		fmt.Println("\t- Interface ",iface, " in promiscuous mode")
 		return true
 	}
 	return false
@@ -81,7 +82,7 @@ func promisc() {
 	}
 	for _, i := range ifaces {
 		if scaninterface(i) && !ifconfigface(i) {
-			fmt.Println("\t- Interface in hidden promisc mode: ", i)
+			fmt.Println("\t- Hidden in promiscuous mode in interface: ", i)
 		}
 	}
 }

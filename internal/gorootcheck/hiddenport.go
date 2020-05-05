@@ -8,7 +8,9 @@ does not show it, we probably have a rootkit installed
 Check TCP/UDP ports
 
 [X] TCP
-[ ] UDP
+[X] UDP
+
+I think need more information about the port, like PID/USER/CWD
 
 */
 package gorootcheck
