@@ -139,7 +139,7 @@ func psproc() {
 	for _, pid := range pids {
 		if dirExist("/proc/" + strconv.Itoa(pid)) {
 			if syskillzero(pid) {
-				fmt.Println("\t- Hidden PID:", pid)
+				fmt.Println("\t- Hidden PID:", pid, " - Possible kernel level rootkit")
 				pidinfo(pid)
 			}
 		}

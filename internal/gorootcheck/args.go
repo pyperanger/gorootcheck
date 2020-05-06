@@ -9,7 +9,6 @@ import (
 var (
 	workdir = flag.String("w", "./", "Path with database datails and signatures")
 	version = flag.Bool("version", false, "Show version")
-	debug   = flag.Bool("v", false, "Debug mode")
 	help    = flag.Bool("h", false, "This massage")
 	VERSION = "0.6.0"
 )
