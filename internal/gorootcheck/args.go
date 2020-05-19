@@ -10,7 +10,7 @@ var (
 	workdir = flag.String("w", "./", "Path with database datails and signatures")
 	version = flag.Bool("version", false, "Show version")
 	help    = flag.Bool("h", false, "This massage")
-	VERSION = "0.6.0"
+	VERSION = "0.7.0"
 )
 
 func argsUsage() {
