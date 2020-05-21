@@ -36,3 +36,6 @@ https://www.ossec.net/docs/manual/rootcheck/manual-rootcheck.html
 
 #### BUGS OR BYPASS(Coool)
 Open a issue or contact me pype@0day.rocks via xmpp
+
+### Contributors
+ - bl00droot
