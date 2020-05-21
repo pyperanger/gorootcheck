@@ -22,7 +22,6 @@ func banner() {
 	`)
 }
 
-
 // printf sha1 of given file
 func sha1hash(file string) {
 	content, err := ioutil.ReadFile(file)
