@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
-	"io/ioutil"
-	"crypto/sha1"
 )
 
 
