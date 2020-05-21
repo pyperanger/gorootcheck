@@ -9,14 +9,14 @@ import (
 )
 
 
-func sha1hash(file string) {
+/**func sha1hash(file string) {
 	content, err := ioutil.ReadFile(file)
 	if err != nil {
 		fmt.Printf(" Error during hashing file process")
 	}
 	fmt.Printf(" | SHA1 [ %x ]\n", sha1.Sum(content))
 }
-
+**/
 func permproblems() {
 
 	fmt.Println("#4 Scan the whole filesystem looking for unusual files and permission problems. v 0.1")
