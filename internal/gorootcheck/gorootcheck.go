@@ -20,6 +20,8 @@ func Main() {
 	rootkit_files()
 	// Rule #3
 	devhide()
+	// Rule #4
+	permproblems()
 	// Rule #5
 	hidden_pid()
 	// Rule #6
