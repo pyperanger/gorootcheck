@@ -23,9 +23,9 @@ func Main() {
 	// Rule #4
 	permproblems()
 	// Rule #5
-	hidden_pid()
+	//hidden_pid()
 	// Rule #6
-	hidden_port()
+	//hidden_port()
 	// Rule #7
 	promisc()
 }
