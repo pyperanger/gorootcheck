@@ -7,7 +7,7 @@ Standalone rootcheck by **OSSEC** wrtitten in Go
 #### 2020-22-05 | v0.8.0 - Persist Issues
 - Rule #1 Some false positives(**rootkit_files.txt**) and bugs persist
 - Rule #3 bypasses issues
-- Rule #5 false positives(delivery by some race conditions)
+- Rule #6 false positives(delivery by some race conditions)
 - + Rule 4 by bloodr00t
 
 ### Install 
